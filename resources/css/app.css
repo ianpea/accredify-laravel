@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-accredify-700{
+    background-color: #363dd2;
+}
+
+.hover\:bg-accredify-500:hover{
+    background-color: #757cff;
+}
