@@ -28,7 +28,7 @@ class UserController extends Controller {
         $incomingFields = $request->validate([
             'name' => ['required', 'min:3', 'max:10', 'alpha_dash', Rule::unique('users', 'name')],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
-            'password' => ['required', 'min:8', 'max:16']
+            'password' => ['required', 'min:8']
         ]);
 
         $incomingFields['password'] = bcrypt($incomingFields['password']);
