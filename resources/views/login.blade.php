@@ -7,23 +7,23 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="flex flex-grow flex-col w-full h-full">
+<body class="flex flex-grow flex-col w-full h-full dark:bg-gray-800">
     @auth
     @else
     <div class="flex flex-grow justify-center items-center flex-col">
-        <span class="text-3xl font-extrabold mb-3">Verification Portal</span>
-        <form action="/login" method="POST" class="bg-gray-200 shadow-lg rounded px-8 pt-6 pb-8 mb-3">
+        <span class="text-3xl font-extrabold mb-3 dark:text-gray-400">Verification Portal</span>
+        <form action="/login" method="POST" class="bg-gray-100 dark:bg-gray-900 shadow-lg rounded px-8 pt-6 pb-8 mb-3">
             @csrf
             <div>
-                <label class="block text-gray-700 text-sm font-bold mb-1">Username</label>
+                <label class="block text-gray-700 dark:text-gray-400 text-sm font-bold mb-1">Username</label>
                 <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-400 leading-tight focus:outline-none focus:shadow-outline mb-2 dark:bg-gray-700"
                     name="loginName" type="text" placeholder="Name">
             </div>
             <div class="mb-3">
-                <label class="block text-gray-700 text-sm font-bold mb-1">Password</label>
+                <label class="block text-gray-700 dark:text-gray-400 text-sm font-bold mb-1">Password</label>
                 <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-400 leading-tight focus:outline-none focus:shadow-outline dark:bg-gray-700"
                     name="loginPassword" type="password" placeholder="Password">
             </div>
 
@@ -46,6 +46,7 @@
                 </div>
             </div>
         </form>
+        @include('footer')
     </div>
     @endauth
 </body>

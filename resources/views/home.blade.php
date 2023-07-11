@@ -7,18 +7,24 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="flex flex-grow flex-col w-full h-full">
+<body class="flex flex-grow flex-col w-full h-full dark:bg-gray-800">
     @auth
     <div class="flex flex-grow justify-center items-center flex-col">
-        <span class="text-3xl font-extrabold mb-3">Welcome back, <b>{{Auth::user()->name}}</b></span>
+        <span class="text-3xl font-extrabold mb-3 dark:text-gray-400">Welcome back, <b>{{Auth::user()->name}}</b></span>
         <form action="/verify" method="POST" enctype="multipart/form-data"
-            class="bg-gray-200 shadow-lg rounded px-8 pt-6 pb-8 mb-3">
+            class="bg-gray-100 dark:bg-gray-900 shadow-lg rounded px-8 pt-6 pb-8 mb-3">
             @csrf
             <div class="flex flex-grow justify-center">
-                <label class="mb-4 text-lg" style="display: block;" for="fileInput">Select a file to verify</label>
+                <label class="mb-4 text-lg dark:text-gray-400" style="display: block;" for="fileInput">Select a file to
+                    verify</label>
             </div>
             <div>
-                <input class="block w-full text-sm" name="fileInput" type="file" id="fileInput" accept=".json">
+
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="fileInput">Upload
+                    file</label>
+                <input
+                    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                    id="file_input" type="file" name="fileInput" id="fileInput" accept=".json">
                 <p class="mt-1 text-sm text-gray-500" id="file_input_help">Accepted file format(s): JSON</p>
             </div>
             <br>
@@ -48,8 +54,9 @@
 
         <form action="/logout" method="POST">
             @csrf
-            <button class="bg-red-600 hover:bg-red-500 py-1 px-3 rounded-full text-white">Logout</button>
+            <button class="bg-red-600 hover:bg-red-500 py-1 px-3 rounded-full text-white text-sm mt-2">Logout</button>
         </form>
+        @include('footer')
     </div>
     @else
     @endauth
