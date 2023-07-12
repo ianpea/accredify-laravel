@@ -32,6 +32,17 @@ README.MD, ROADMAP.MD & 'Accredify Laravel Diagrams.pdf'.
 
     - run below 2 commands to start the docker containers (First time running will take a while to install docker images)
         > ``` ./vendor/bin/sail up ```
+
+    - prepare the database
+        > ``` php artisan migrate ```
+
+    - generate app key
+        > ``` php artisan key:gen ```
+
+    - refresh app cache
+        > ``` php artisan optimize:clear ```\
+        > ``` php artisan optimize ```
+
 4. Verify in Docker desktop that there are 4 containers running under <em>"accredify-laravel"</em>, i.e. <b>
 - *laravel.app-1, 
 - *mysql-1 and
