@@ -1,7 +1,7 @@
 # About
 This application is built as a result of the assignment by Accredify Team - [Technical Assessment for Laravel Developer](https://accredify.notion.site/Technical-Assessment-for-Laravel-Developer-de808af21ca249ba8f4b2d8f1aaf2a66). It is built using the official Laravel docker image(s) which includes Laravel, MySQL and redis.
 
-Live Website - [Click Here](http://verification.portal.ianpee.com)
+## Live Website - [Click Here](http://verification.portal.ianpee.com) ##
 
 Feature includes:
 - Register, login and logout using Laravel authentication.
@@ -9,6 +9,9 @@ Feature includes:
 - Log results into database.
 - Utility class to return paths of each JSON value.
 - Test cases that covers 90% of the features provided.
+
+Project Files includes:
+README.MD, ROADMAP.MD & 'Accredify Laravel Diagrams.pdf'.
 
 ## How To Deploy Locally (macOS)
 1. Install docker, composer and unzip project files into a folder.
@@ -37,11 +40,14 @@ Feature includes:
 5. Now that the containers are up, you can run your app locally in the app folder using command below in new terminal
     > ``` npm run dev ```
 6. To view and test the app, navigate to the link below (you may refer to APP_URL variable in .env file)
-    > ``` http://localhost ``` 
+    The link is a combination of APP_URL + APP_PORT
+    > ``` http://localhost:9001 ``` 
 7. To verify the test cases, run this command in a separate terminal in app folder 
     > ``` php artisan test ```
-Results:
-![Alt text](<SS 2023-07-12 at 14.37.49.png>)
+
+    Results:
+
+    ![Alt text](<SS 2023-07-12 at 14.37.49.png>)
 
 
 ## Author
