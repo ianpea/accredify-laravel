@@ -1,7 +1,9 @@
 # About
 This application is built as a result of the assignment by Accredify Team - [Technical Assessment for Laravel Developer](https://accredify.notion.site/Technical-Assessment-for-Laravel-Developer-de808af21ca249ba8f4b2d8f1aaf2a66). It is built using the official Laravel docker image(s) which includes Laravel, MySQL and redis.
 
-Includes:
+Live Website - [Click Here](http://verification.portal.ianpee.com)
+
+Feature includes:
 - Register, login and logout using Laravel authentication.
 - Verify a valid JSON document.
 - Log results into database.
@@ -9,25 +11,38 @@ Includes:
 - Test cases that covers 90% of the features provided.
 
 ## How To Deploy Locally (macOS)
-1. Install docker and unzip project files.
-2. Navigate into project folder, then run below command to start the docker containers
-> ``` ./vendor/bin/sail up ```
-3. Verify in Docker desktop that there are 4 containers running under <em>"accredify-laravel"</em>, i.e. <b>
+1. Install docker, composer and unzip project files into a folder.
+2. Navigate into the folder created
+3. ## In the folder, run below in sequence (may take sometime) ##
+    - run the command
+        > ``` composer install ```
+
+        ![Alt text](<SS 2023-07-12 at 12.46.38.png>)
+    - duplicate a new file in root of folder called '.env' from '.env.example' without quotes, then
+        > ``` Add a new field under APP_URL called APP_PORT=9001 ```
+    - prepare MySQL connection
+        > ``` update the following fields with 'DB_' prefix to point to the MySQL container. ```
+
+        ![Alt text](<SS 2023-07-12 at 12.48.24.png>)
+    - run below command to install node modules (>node v18)
+        > ``` npm install ```
+
+    - run below 2 commands to start the docker containers (First time running will take a while to install docker images)
+        > ``` ./vendor/bin/sail up ```
+4. Verify in Docker desktop that there are 4 containers running under <em>"accredify-laravel"</em>, i.e. <b>
 - *laravel.app-1, 
 - *mysql-1 and
 - *redis-1.
 - *phpmyadmin-1</b>
-4. Now that the containers are up, you can run your app locally in the app folder using terminal <em><strong>(Do not close the previous terminal, they keep docker containers running.)</strong></em>, the below code will give you a localhost link that you can use to run the next step.
-> ``` npm run dev ```
-5. To view and test the app, navigate to the link below (you may refer to 4.)
-> ``` http://localhost ``` 
-6. To verify the test cases, run this command in a separate terminal in app folder 
-> ``` php artisan test ```
-7. To verify the data, navigate to 
-> ``` http://localhost:80 ```
+5. Now that the containers are up, you can run your app locally in the app folder using command below in new terminal
+    > ``` npm run dev ```
+6. To view and test the app, navigate to the link below (you may refer to APP_URL variable in .env file)
+    > ``` http://localhost ``` 
+7. To verify the test cases, run this command in a separate terminal in app folder 
+    > ``` php artisan test ```
+Results:
+![Alt text](<SS 2023-07-12 at 14.37.49.png>)
 
-## How To Deploy Locally (Windows)
-1. TBC
 
 ## Author
 Prepared by, Ian Pee, 2023-07-02
