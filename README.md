@@ -1,5 +1,5 @@
 # About
-This application is built as a result of the assignment by Accredify Team - [Technical Assessment for Laravel Developer] It is built using the official Laravel docker image(s) which includes Laravel, MySQL and redis.
+This application is built as a result of the assignment by Accredify Team - [Technical Assessment for Laravel Developer]. It is built using the official Laravel docker image(s) which includes Laravel, MySQL and redis.
 
 ## Live Website - [Click Here](http://verification.portal.ianpee.com) ##
 
